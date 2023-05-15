@@ -4,6 +4,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+body {
+    height: 100%;
+    box-sizing: border-box;
+    background: rgb(22,2,22);
+    background: linear-gradient(0deg, rgba(22,2,22,1) 0%, rgba(69,1,49,1) 100%);
+}
+
 
 .city {
     visibility: hidden;
@@ -16,7 +23,18 @@
     visibility: inherit;
 }
 
-
+.trueChoice{
+    fill: greenyellow !important;
+}
+.wrongChoice{
+    fill: gray !important;
+}
+.scores{
+    visibility: hidden;
+}
+.scores.active{
+    visibility: initial;
+}
 
 
 
@@ -63,7 +81,7 @@
     stroke-width: 0.5;
 }
 
-.land:hover {
+.land:not(.selectedCity):hover {
     cursor: pointer;
     color: black;
     fill: wheat;
@@ -93,9 +111,6 @@
     height: 200px;
 }
 
-.selectedCity {
-    fill: red !important;
-}
 
 .text {
 

@@ -11,8 +11,8 @@
     <title>Document</title>
 </head>
 
-<body class="bg-dark">
-    <h3 class="text-white p-5 text-center display-1 bg-danger city">Bu şehri bul: <span class=" fw-bolder">Ankara</span></h3>
+<body>
+    <h3 class="text-white p-5 text-center display-1  city">Bu şehri bul: <span class=" fw-bolder">Ankara</span></h3>
     <div class="container-fluid  d-flex align-items-center justify-content-center  ">
         <div class="map  my-5">
             <?xml version="1.0" encoding="utf-8"?>
@@ -200,6 +200,35 @@
             
         </div>
     </div>
+    <div class="container-fluid text-white scores my-4">
+        <h4 class="text-center border-bottom border-3 border-dark">Skor</h4>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h5 class="remainingCity">Kalan şehir sayısı : <span class="fw-bolder">81</span></h5>
+            </div>
+            <div class="col-md-4">
+                <h5>Doğru tahmin sayısı <span class="badge bg-success correctCount">0</span></h5>
+            </div>
+            <div class="col-md-4">
+                <h5>Yanlış tahmin sayısı <span class="badge bg-danger wrongCount">0</span></h5>
+            </div>
+            
+        </div>
+    </div>
+    <footer class="fixed-bottom sticky-bottom d-sm-none bg-black">
+        <div class="container-fluid">
+            <div class="row text-white">
+                &copy; Emirhan Hasırcı
+            </div>
+        </div>
+    </footer>
+    <footer class="fixed-bottom  d-none d-sm-block bg-black">
+        <div class="container-fluid">
+            <div class="row text-white">
+                &copy; Emirhan Hasırcı
+            </div>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="ui.js"></script>

@@ -1,20 +1,17 @@
 
-
-
-var selectedCities = [];
-var selectedCitiesId = [];
-var selectedCitiesPanel = document.querySelector(".selectedCities")
-var cityName = document.querySelector(".City-Name")
 $('.map path').mouseover(function (e) {
-    console.log(e.target.attributes[1].nodeValue);  
-    $('<div class="info_panel">' + e.target.attributes[1].nodeValue +
-        '<br>' + e.target.attributes[1].nodeValue +
-        ' ' + '<br>'+e.target.id.substring(e.target.id.length-2)+
-        '</div>'
-    )
-        .appendTo('body');
+    
+    if(e.target.classList.contains("selectedCity")){
 
-        cityName.innerHTML=e.target.attributes[1].nodeValue;
+        $('<div class="info_panel text-center">' + e.target.attributes[1].nodeValue +
+        '<br>'+
+       e.target.id.substring(e.target.id.length-2)+
+        '</div>'
+        )
+        .appendTo('body');
+        
+    }
+        
 })
     .mouseleave(function () {
         $('.info_panel').remove();
@@ -25,41 +22,51 @@ $('.map path').mouseover(function (e) {
             mouseY = e.pageY; //Y coordinates of mouse
 
         $('.info_panel').css({
-            top: mouseY - 100,
-            left: mouseX - ($('.info_panel').width() / 2 -20),
+            top: mouseY -10,
+            left: mouseX - ($('.info_panel').width() / 2 -50),
             
             
         });
         
     })
     .click(function (e) {
-        var text = "";
-        selectedCitiesPanel.innerHTML = "";
-        e.target.classList.toggle("selectedCity")
-        if (e.target.classList.contains("selectedCity")) {
-            selectedCities.unshift(e)
-            selectedCitiesId.unshift(e.target.id.substring(e.target.id.length-2))
-            console.log(selectedCities.indexOf(e));
-        } else {
+        if(!e.target.classList.contains("selectedCity")){
 
-            for (let index = 0; index < selectedCities.length; index++) {
-                if (selectedCities[index].target.attributes[0].nodeValue == e.target.attributes[0].nodeValue) {
-                    selectedCitiesId.splice(index,1);
-                    selectedCities.splice(index, 1)
+        
+        let selecetedArea=e.target.attributes[1].nodeValue;
+        if(selectedCity==selecetedArea){
+            e.target.classList.add("trueChoice")
+            e.target.classList.add("selectedCity")
+            correctCount++;
+            
+        }else{
+            for(var item of ui.paths){
+                if(item.attributes[1].nodeValue==selectedCity){
+                    item.classList.add("wrongChoice")
+                    item.classList.add("selectedCity")
+                    wrongCount++;
                 }
-
+            };
+        }
+        
+        
+        for(let i=0;i<citys.length;i++){
+            if(citys[i]==selectedCity){
+                citys.splice(i,1);
             }
         }
-       
-
-
-        for (let item of selectedCities) {
-            text += '<div class="bg-info bg-opacity-50"> -' + item.target.attributes[1].nodeValue +' id: '+ item.target.id.substring(e.target.id.length-2)+ '</div>'
+        if(citys.length!=0)
+        {
+            
+            askedCity();
         }
-        $(text).appendTo(selectedCitiesPanel)
-        for(let item in selectedCitiesId){
-            console.log(selectedCitiesId[item])
+        if(citys.length==0){
+            ui.city_name.innerHTML="Tebrikler oyun bitti";
+            ui.remainingCity.innerHTML=0;
         }
+        ui.correctCount.innerHTML=correctCount;
+        ui.wrongCount.innerHTML=wrongCount;       
+    }                             
     });
 $('.map path').click(function (e) {
 

@@ -1,24 +1,42 @@
-.btns{
+.btns {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.city {
+    visibility: hidden;
+}
+
+.deactive {
+    visibility: hidden;
+}
+.active{
+    visibility: inherit;
+}
+
+
+
+
 
 .p {
     font-family: Arial, sans-serif;
     text-align: center;
 }
-.map{
-    
-    opacity:1 ;
+
+.map {
+
+    opacity: 0;
+    visibility: hidden;
     pointer-events: auto;
 
-    transform:  scale(1.4);
-    
+    transform: scale(1.4);
+
 }
-.map.active{
+
+.map.active {
+    visibility: inherit;
     opacity: 1;
 }
 
@@ -28,11 +46,12 @@
     padding-left: 0.7rem !important;
     padding-right: 0.7rem !important;
 }
+
 .map svg {
     padding-left: 200px;
-    height: 500px;   
+    height: 500px;
     width: 90%;
-   max-width: 1200px;
+    max-width: 1200px;
     display: block;
 }
 
@@ -79,20 +98,23 @@
 }
 
 .text {
-    
+
     text-anchor: middle;
     fill: black;
 }
+
 @media only screen and (max-width: 600px) {
-    .map svg{
-       padding-left: 60px;
+    .map svg {
+        padding-left: 60px;
         height: 250px;
         margin-top: 50px;
     }
+
     .btns {
         position: absolute;
         transform: translate(-50%, -50%);
     }
+
     .btn_start {
         width: 200px;
     }
@@ -101,4 +123,3 @@
         width: 200px;
     }
 }
-

@@ -55,6 +55,7 @@ $('.map path').mouseover(function (e) {
                 citys.splice(i,1);
             }
         }
+       
         if(citys.length!=0)
         {
             
@@ -68,6 +69,3 @@ $('.map path').mouseover(function (e) {
         ui.wrongCount.innerHTML=wrongCount;       
     }                             
     });
-$('.map path').click(function (e) {
-
-})

@@ -7,7 +7,7 @@
 
 # Game
 
-![Game](https://github.com/EmirhanHasirci11/Map-Guesser-Game/assets/54208249/bdbe41ae-86f1-41e6-8e1f-133ab5e66ef3)
+![Game](https://github.com/EmirhanHasirci11/Map-Guesser-Game/assets/54208249/531aa37d-0d1f-4118-af6a-f7fd93cbb1d2)
 
 # Correct Placement
 

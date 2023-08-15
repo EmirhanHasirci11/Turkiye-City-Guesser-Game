@@ -13,12 +13,9 @@ body {
 html{
    height: 100%;
 }
-
-
 .city {
     visibility: hidden;
 }
-
 .deactive {
     visibility: hidden;
 }
